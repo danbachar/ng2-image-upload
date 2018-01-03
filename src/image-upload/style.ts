@@ -29,6 +29,17 @@ export interface Style {
     */
     clearButton?: StyleProps;
     /**
+    * Sets custom style for second button.
+    *
+    * ```    
+    * clearButton: {
+    *    "background-color": "#FFFF00",
+    *    "color": "#FFF"
+    * }
+    * ```
+    */
+    secondButton?: StyleProps;
+    /**
     * Sets custom style for entire layout.
     *
     * ```    

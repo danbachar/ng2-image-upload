@@ -45,7 +45,8 @@ export class ImageUploadComponent implements OnInit, OnChanges {
   @Output() removed = new EventEmitter<FileHolder>();
   @Output() uploadStateChanged = new EventEmitter<boolean>();
   @Output() uploadFinished = new EventEmitter<FileHolder>();
-
+  @Input() secondButtonCaption: string;
+  @Input() secondButtonFunction: Function;
   @ViewChild('input')
   private inputElement: ElementRef;
   private pendingFilesCounter: number = 0;
@@ -58,6 +59,10 @@ export class ImageUploadComponent implements OnInit, OnChanges {
       this.fileTooLargeMessage = 'An image was too large and was not uploaded.' + (this.maxFileSize ? (' The maximum file size is ' + this.maxFileSize / 1024) + 'KiB.' : '');
     }
     this.supportedExtensions = this.supportedExtensions ? this.supportedExtensions.map((ext) => 'image/' + ext) : ['image/*'];
+  }
+
+  execSecondButtonFunction() {
+    this.secondButtonFunction();
   }
 
   deleteAll() {

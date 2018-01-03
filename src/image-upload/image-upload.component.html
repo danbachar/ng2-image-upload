@@ -27,6 +27,13 @@
       [ngStyle]="style?.clearButton"
       [innerText]="clearButtonCaption">
     </button>
+    <button *ngIf="fileCounter > 1"
+      [disabled]="disabled"
+      class="img-ul-clear img-ul-button" 
+      (click)="execSecondButtonFunction()" 
+      [ngStyle]="style?.secondButton"
+      [innerText]="secondButtonCaption">
+    </button>
     <div class="img-ul-drag-box-msg" [innerText]="dropBoxMessage"></div>
   </div>
 
