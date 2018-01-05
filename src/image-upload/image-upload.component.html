@@ -27,7 +27,7 @@
       [ngStyle]="style?.clearButton"
       [innerText]="clearButtonCaption">
     </button>
-    <button *ngIf="fileCounter > 1"
+    <button *ngIf="files.length > 1"
       [disabled]="disabled"
       class="img-ul-clear img-ul-button" 
       (click)="execSecondButtonFunction()" 
