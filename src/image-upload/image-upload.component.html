@@ -30,7 +30,7 @@
     <button *ngIf="files.length > 1"
       [disabled]="disabled"
       class="img-ul-clear img-ul-button" 
-      (click)="execSecondButtonFunction()" 
+      (click)="onSecondButtonClick()" 
       [ngStyle]="style?.secondButton"
       [innerText]="secondButtonCaption">
     </button>

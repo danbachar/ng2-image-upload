@@ -1,7 +1,7 @@
 import { Component, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, ViewChild } from '@angular/core';
 import { Headers, Response } from '@angular/http';
 import { UploadMetadata } from './before-upload.interface';
-
+import { Router } from '@angular/router';
 import { ImageService } from './image.service';
 import { Style } from './style';
 
@@ -51,7 +51,7 @@ export class ImageUploadComponent implements OnInit, OnChanges {
   private inputElement: ElementRef;
   private pendingFilesCounter: number = 0;
 
-  constructor(private imageService: ImageService) {
+  constructor(private imageService: ImageService, private router: Router) {
   }
 
   ngOnInit() {
@@ -61,8 +61,8 @@ export class ImageUploadComponent implements OnInit, OnChanges {
     this.supportedExtensions = this.supportedExtensions ? this.supportedExtensions.map((ext) => 'image/' + ext) : ['image/*'];
   }
 
-  execSecondButtonFunction() {
-    this.secondButtonFunction();
+  onSecondButtonClick(address: string, cameFrom: string) {
+    this.router.navigateByUrl(address, { queryParams: { cameFrom: cameFrom }});
   }
 
   deleteAll() {
