@@ -46,7 +46,8 @@ export class ImageUploadComponent implements OnInit, OnChanges {
   @Output() uploadStateChanged = new EventEmitter<boolean>();
   @Output() uploadFinished = new EventEmitter<FileHolder>();
   @Input() secondButtonCaption: string;
-  @Input() secondButtonFunction: Function;
+  @Input() secondButtonRedirectToAddress: string;
+  @Input() secondButtonRedirectFromAddress: string;
   @ViewChild('input')
   private inputElement: ElementRef;
   private pendingFilesCounter: number = 0;
@@ -61,8 +62,8 @@ export class ImageUploadComponent implements OnInit, OnChanges {
     this.supportedExtensions = this.supportedExtensions ? this.supportedExtensions.map((ext) => 'image/' + ext) : ['image/*'];
   }
 
-  onSecondButtonClick(address: string, cameFrom: string) {
-    this.router.navigateByUrl(address, { queryParams: { cameFrom: cameFrom }});
+  onSecondButtonClick() {
+    this.router.navigateByUrl(this.secondButtonRedirectToAddress, { queryParams: { cameFrom: this.secondButtonRedirectFromAddress }});
   }
 
   deleteAll() {
