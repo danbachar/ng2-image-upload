@@ -14,7 +14,7 @@ export class FileHolder {
 }
 
 @Component({
-  selector: 'image-upload',
+  selector: 'app-image-upload',
   templateUrl: './image-upload.component.html',
   styleUrls: ['./image-upload.component.css']
 })
