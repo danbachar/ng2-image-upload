@@ -1,6 +1,6 @@
 {
-  "name": "danbachar-angular2-image-upload",
-  "version": "3.0.0",
+  "name": "gever-angular2-image-upload",
+  "version": "1.0.0",
   "description": "An angular component that uploads images using native browser upload or drag-n-drop.",
   "main": "index.js",
   "scripts": {
@@ -10,10 +10,6 @@
     "install:demo": "cd demo && yarn",
     "demo": "cd demo && npm start",
     "build:demo": "cd demo && npm run build"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/danbachar/ng2-image-upload"
   },
   "keywords": [
     "image",
