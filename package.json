@@ -1,6 +1,6 @@
 {
   "name": "danbachar-angular2-image-upload",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "An angular component that uploads images using native browser upload or drag-n-drop.",
   "main": "index.js",
   "scripts": {
